@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int i=1;
+int gcd(int b, int a)
+{
+    int r = b%a;
+    cout<<"Iteration" << i <<" GCD ( "<< b <<","<< a <<" ) = "<<r <<endl;
+    if (r == 0)
+        return a;
+    else{
+        b = a;
+        a = r;
+        i++;
+        return gcd(b,a);
+    }
+}
+int main()
+{
+    //121393  75025
+    //int b = 55, a = 34;
+    int b = 121393, a = 75025;
+    cout<< "Greatest common divisor is: "<< gcd(b,a);
+    return 0;
+}
